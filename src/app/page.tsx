@@ -1,3 +1,4 @@
+import Arrival from "@/components/pages/arrival";
 import Categories from "@/components/pages/categories";
 import Category from "@/components/pages/category";
 import Hero from "@/components/pages/hero/hero";
@@ -12,6 +13,7 @@ export default function Home() {
       <Categories />
       <BestSales />
       <Category />
+      <Arrival />
     </div>
   );
 }
