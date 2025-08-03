@@ -8,7 +8,7 @@ import HighlightText from "@/utils/helpers/highlight-text";
 
 function Arrival() {
   return (
-    <section className="container mx-auto py-12 md:py-16 ">
+    <section className="container mx-auto py-12 md:py-16">
       <HighlightText>Featured</HighlightText>
       <div className="flex flex-wrap items-end pt-6 pb-10">
         <Title>New Arrival</Title>
