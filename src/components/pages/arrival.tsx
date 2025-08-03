@@ -4,12 +4,14 @@ import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Title from "@/utils/helpers/title";
+import HighlightText from "@/utils/helpers/highlight-text";
 
 function Arrival() {
   return (
     <section className="container mx-auto py-12 md:py-16">
-      <div>
-        <Title>New Arrivals</Title>
+      <HighlightText>Featured</HighlightText>
+      <div className="flex flex-wrap items-end pt-6 pb-10">
+        <Title>New Arrival</Title>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Left Big Card */}
@@ -71,7 +73,7 @@ function Arrival() {
               <img
                 src="/images/Speakers_bg.svg"
                 alt="Background"
-                className="absolute inset-0 w-full h-full z-0 object-cover"
+                className="absolute bg-black inset-0 w-full h-full z-0 object-cover"
               />
               <img
                 src="/images/Speakers.svg"
@@ -99,7 +101,7 @@ function Arrival() {
               <img
                 src="/images/Perfume_bg.svg"
                 alt="Background"
-                className="absolute inset-0 w-full h-full z-0 object-cover"
+                className="absolute bg-black inset-0 w-full h-full z-0 object-cover"
               />
               <img
                 src="/images/Perfume.svg"
