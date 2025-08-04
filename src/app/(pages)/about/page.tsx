@@ -2,6 +2,7 @@ import HighlightCard from "@/components/pages/highlight-card";
 import Image from "next/image";
 import { Store, BadgeDollarSign, HandCoins, ShoppingBag } from "lucide-react";
 import HomeService from "@/components/pages/home-service";
+import AboutCarousel from "@/components/ui/about-carousel";
 
 const highlightData = [
   {
@@ -65,7 +66,11 @@ const About = () => {
           </div>
         ))}
       </div>
-      {/* Section 2:  CUSTOMER SERVICE */}
+      {/* Section 2: carousel */}
+      <div className="mt-32">
+        <AboutCarousel />
+      </div>
+      {/* Section 4:  CUSTOMER SERVICE */}
       <div>
         <HomeService />
       </div>
