@@ -30,7 +30,7 @@ function HomeService() {
             Icon={item.Icon}
             name={item.name}
             description={item.description}
-            nameStyle="font-semibold text-xl"
+            nameStyle="font-semibold text-3xl"
             descriptionStyle="text-sm"
             containerStyle="w-full"
           />

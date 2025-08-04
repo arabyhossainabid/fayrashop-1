@@ -4,7 +4,8 @@ import Title from "@/utils/helpers/title"; // adjust path if needed
 
 interface HighlightCardProps {
   Icon: LucideIcon;
-  name: string;
+  name?: string;
+  number?: string;
   description: string;
   nameStyle?: string;
   descriptionStyle?: string;
@@ -14,6 +15,7 @@ interface HighlightCardProps {
 const HighlightCard: React.FC<HighlightCardProps> = ({
   Icon,
   name,
+  number,
   description,
   nameStyle,
   descriptionStyle,
@@ -24,7 +26,12 @@ const HighlightCard: React.FC<HighlightCardProps> = ({
       className={`w-full max-w-[350px] mx-auto text-center p-6 rounded-lg flex flex-col justify-center items-center ${containerStyle}`}
     >
       <Icon className="w-12 h-12 mb-4" />
-      <Title style={`text-base md:text-lg ${nameStyle}`}>{name}</Title>
+      {number && (
+        <Title style={`text-3xl font-bold ${nameStyle}`}>{number}</Title>
+      )}
+      {name && (
+        <Title style={`text-base md:text-lg ${nameStyle}`}>{name}</Title>
+      )}
       <p className={`text-sm md:text-base ${descriptionStyle}`}>{description}</p>
     </div>
   );
