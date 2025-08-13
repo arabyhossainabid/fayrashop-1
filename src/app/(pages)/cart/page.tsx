@@ -33,14 +33,12 @@ export default function page() {
   const [couponCode, setCouponCode] = useState("");
   const [isCouponApplied, setIsCouponApplied] = useState(false);
 
-  // Load cart from localStorage on mount
   useEffect(() => {
     try {
       const storedCart = JSON.parse(localStorage.getItem("cartItems") || "[]");
       if (storedCart.length > 0) {
         setItems(storedCart);
       } else {
-        // You can initialize with default items if needed
         setItems([
           {
             id: "1",
@@ -84,7 +82,7 @@ export default function page() {
 
   const discount = isCouponApplied ? subtotal * 0.2 : 0;
   const subtotalAfterDiscount = subtotal - discount;
-  const shipping = 0; // you can add shipping logic here if you want
+  const shipping = 0;
   const total = subtotalAfterDiscount + shipping;
 
   // Remove item
@@ -127,6 +125,7 @@ export default function page() {
         items: items,
       }),
     );
+    console.log(items);
 
     setItems([]);
     localStorage.removeItem("cartItems");
@@ -136,9 +135,7 @@ export default function page() {
 
   return (
     <section className="md:p-6 my-20 space-y-8 max-w-7xl mx-auto">
-      {/* Cart Table */}
       <div>
-        {/* Table Header (desktop only) */}
         <div className="hidden md:grid mb-6 p-4 rounded bg-muted grid-cols-5 gap-4 text-base font-medium">
           <span>Product</span>
           <span>Color & Size</span>
@@ -147,13 +144,11 @@ export default function page() {
           <span>Subtotal</span>
         </div>
 
-        {/* Cart Items */}
         <div className="space-y-4">
           {items.map((item) => (
             <Card key={item.id} className="hover:bg-muted/30 transition">
               <CardContent className="p-4">
                 <div className="md:grid md:grid-cols-5 md:gap-4 items-center">
-                  {/* Product Image + Name + Remove */}
                   <div className="flex items-center gap-3 md:col-span-1">
                     <div className="relative w-16 h-16">
                       <img
@@ -175,18 +170,15 @@ export default function page() {
                     </span>
                   </div>
 
-                  {/* Color & Size (desktop only) */}
                   <div className="hidden md:flex flex-col text-sm text-muted-foreground">
                     <span>Color: {item.color}</span>
                     <span>Size: {item.size}</span>
                   </div>
 
-                  {/* Price */}
                   <div className="hidden md:flex items-center">
                     <span>${item.price.toFixed(2)}</span>
                   </div>
 
-                  {/* Quantity input */}
                   <div className="hidden md:block">
                     <Input
                       type="number"
@@ -200,13 +192,11 @@ export default function page() {
                     />
                   </div>
 
-                  {/* Subtotal */}
                   <div className="hidden md:flex items-center font-medium">
                     <span>${(item.price * item.quantity).toFixed(2)}</span>
                   </div>
                 </div>
 
-                {/* Mobile view: show quantity + price under product */}
                 <div className="flex justify-between mt-3 md:hidden text-sm text-muted-foreground">
                   <div>
                     Color: {item.color} • Size: {item.size}
@@ -231,7 +221,6 @@ export default function page() {
         </div>
       </div>
 
-      {/* Actions */}
       <div className="flex justify-between flex-wrap gap-4">
         <Button variant="outline" onClick={() => (window.location.href = "/")}>
           Return To Shop
@@ -244,7 +233,6 @@ export default function page() {
         </Button>
       </div>
 
-      {/* Coupon + Total */}
       <div className="flex flex-col md:flex-row gap-6 justify-between">
         <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto">
           <Input
