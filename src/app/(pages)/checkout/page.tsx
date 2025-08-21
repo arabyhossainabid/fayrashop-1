@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 let inputPasswordStyle: string =
-  "rounded-lg bg-[#F5F5F5] w-full md:w-[470px] h-[50px] resize-none";
+  "rounded-lg w-full md:w-full h-12 resize-none";
 
 type CartItem = {
   id: string;
@@ -217,7 +217,7 @@ function CheckoutPage() {
                     value={value}
                     checked={paymentMethod === value}
                     onChange={(e) => setPaymentMethod(e.target.value)}
-                    className="w-5 h-5 accent-black"
+                    className="w-5 h-5 accent-red-500 "
                   />
                   <span className="font-medium text-base md:text-lg">
                     {label}
